@@ -35,3 +35,7 @@ const drawControl = new L.Control.Draw({
 });
 
 map.addControl(drawControl);
+
+map.on('draw:created', function(e) {
+  drawnItems.addLayer(e.layer);
+});
